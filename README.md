@@ -25,6 +25,16 @@ Training command of *Shear sheep* task:
 MINEDOJO_HEADLESS=1 python expr.py --configs minedojo --task minedojo_longdream_harvest_wool_in_plains --logdir ./logdir/ls_imagine/log --seed 10
 ```
 
+## Citation
+```
+@article{li2024open,
+  title={Open-World Reinforcement Learning over Long Short-Term Imagination}, 
+  author={Jiajian Li and Qi Wang and Yunbo Wang and Xin Jin and Wenjun Zeng and Xiaokang Yang},
+  journal={arXiv preprint arXiv:2410.03618},
+  year={2024}
+}
+```
+
 ## Acknowledgement
 The codes refer to the implemention of [dreamerv3-torch](https://github.com/NM512/dreamerv3-torch). Thanks for the authors！
 
