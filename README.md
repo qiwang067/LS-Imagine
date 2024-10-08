@@ -1,4 +1,9 @@
 # Open-World Reinforcement Learning over Long Short-Term Imagination
+#### Open-World Reinforcement Learning over Long Short-Term Imagination
+
+Jiajian Li*, Qi Wang*, Yunbo Wang, Xin Jin, Yang Li, Wenjun Zeng, Xiaokang Yang
+
+[[arXiv]](https://arxiv.org/pdf/2410.03618)  [[Project Page]](https://qiwang067.github.io/ls-imagine)
 
 ## Getting Strated
 LS-Imagine is implemented and tested on Ubuntu 20.04 with python == 3.9:
