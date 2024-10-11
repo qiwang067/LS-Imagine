@@ -31,7 +31,7 @@ MINEDOJO_HEADLESS=1 python expr.py --configs minedojo --task minedojo_longdream_
 ```
 
 ## Citation
-```
+```bib
 @article{li2024open,
   title={Open-World Reinforcement Learning over Long Short-Term Imagination}, 
   author={Jiajian Li and Qi Wang and Yunbo Wang and Xin Jin and Wenjun Zeng and Xiaokang Yang},
