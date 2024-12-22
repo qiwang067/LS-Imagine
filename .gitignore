@@ -1,0 +1,39 @@
+# Ignore all __pycache__ folders in the project
+__pycache__/
+
+# Ignore the entire Minecraft folder
+affordance_map/datasets/Minecraft/
+
+# Ignore the entire triplets folder
+affordance_map/datasets/triplets/
+
+# Ignore all contents of the finetune_unet folder, but keep the folder itself
+affordance_map/finetune_unet/*
+!affordance_map/finetune_unet/.gitkeep
+
+# Ignore all contents of the affordance_map/lists folder
+affordance_map/lists/*
+
+# Ignore the entire model_out folder
+affordance_map/model_out/
+
+# Ignore all contents of the pretrained_ckpt folder
+affordance_map/pretrained_ckpt/*
+
+# Ignore all contents of the pretrained_unet_checkpoint folder
+affordance_map/pretrained_unet_checkpoint/*
+
+# Ignore the entire logdir folder
+logdir/
+
+# Ignore the entire logs folder
+logs/
+
+# Ignore all contents of the weights folder
+weights/*
+
+# Ignore all files with the .log extension
+*.log
+
+# Ignore all files with the .sh extension
+*.sh

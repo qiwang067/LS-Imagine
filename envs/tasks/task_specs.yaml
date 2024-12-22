@@ -1,0 +1,335 @@
+############################################
+###       Env Specs for LS-Imagine       ###
+############################################
+
+harvest_log_in_plains:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 5
+  sim_specs:
+    target_names: "log"
+    target_quantities: 1
+    specified_biome: "plains"
+    break_speed_multiplier: 100
+  clip_specs:
+    prompts: ["Cut a tree"]
+  concentration_specs:
+    prompts: ["Cut a tree"]
+    unet_checkpoint_dir: "affordance_map/finetune_unet/finetune_checkpoints/harvest_log_in_plains"
+  reward_specs:
+    item_rewards: 
+      log:
+        reward: 1
+  success_specs:
+    terminal: True
+    reward: 0
+    any:
+      item:
+        type: 'log'
+        quantity: 1
+  terminal_specs:
+    max_steps: 1000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: False
+  LS_Imagine_specs:
+    repeat: 1
+
+harvest_water_bucket_in_plains:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 5
+  sim_specs:
+    target_names: "water_bucket"
+    target_quantities: 1
+    specified_biome: "plains"
+    break_speed_multiplier: 100
+    initial_inventory:
+      mainhand:
+        name: "bucket"
+        quantity: 1
+  clip_specs:
+    prompts: ["Obtain water"]
+  concentration_specs:
+    prompts: ["Obtain water"]
+    unet_checkpoint_dir: "affordance_map/finetune_unet/finetune_checkpoints/harvest_water_bucket_in_plains"
+  reward_specs:
+    item_rewards: 
+      water_bucket:
+        reward: 1
+  success_specs:
+    terminal: True
+    reward: 0
+    all:
+      item:
+        type: 'water_bucket'
+        quantity: 1
+  terminal_specs:
+    max_steps: 1000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: False
+  LS_Imagine_specs:
+    repeat: 1
+
+harvest_sand:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 5
+  sim_specs:
+    target_names: "sand"
+    target_quantities: 1
+    break_speed_multiplier: 100
+  clip_specs:
+    prompts: ["Obtain sand"]
+  concentration_specs:
+    prompts: ["Obtain sand"]
+    unet_checkpoint_dir: "affordance_map/finetune_unet/finetune_checkpoints/harvest_sand"
+  reward_specs:
+    item_rewards: 
+      sand:
+        reward: 1
+  success_specs:
+    terminal: True
+    reward: 0
+    all:
+      item:
+        type: 'sand'
+        quantity: 1
+  terminal_specs:
+    max_steps: 1000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: False
+  LS_Imagine_specs:
+    repeat: 1
+
+mine_iron_ore:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 10
+  sim_specs:
+    target_names: "iron_ore"
+    target_quantities: 1
+    break_speed_multiplier: 100
+    initial_inventory:
+      mainhand:
+        name: "stone_pickaxe"
+        quantity: 1
+  clip_specs:
+    prompts: ["Mine iron ore"]
+  concentration_specs:
+    prompts: ["Mine iron ore"]
+    unet_checkpoint_dir: "affordance_map/finetune_unet/finetune_checkpoints/mine_iron_ore"
+  reward_specs:
+    item_rewards: 
+      iron_ore:
+        reward: 1
+  success_specs:
+    terminal: True
+    reward: 0
+    all:
+      item:
+        type: 'iron_ore'
+        quantity: 1
+  terminal_specs:
+    max_steps: 2000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: False
+  LS_Imagine_specs:
+    repeat: 1
+
+harvest_wool_in_plains:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 5
+  sim_specs:
+    target_names: "wool"
+    target_quantities: 1
+    initial_mobs: "sheep"
+    initial_mob_spawn_range_low: [-15, 1, -15]
+    initial_mob_spawn_range_high: [15, 1, 15]
+    specified_biome: "plains"
+    break_speed_multiplier: 100
+    initial_inventory:
+      mainhand:
+        name: "shears"
+        quantity: 1
+  clip_specs:
+    prompts: ["Obtain wool"]
+  concentration_specs:
+    prompts: ["Obtain wool"]
+    unet_checkpoint_dir: "affordance_map/finetune_unet/finetune_checkpoints/harvest_wool_in_plains"
+  reward_specs:
+    item_rewards: 
+      wool:
+        reward: 1
+  success_specs:
+    terminal: True
+    reward: 0
+    any:
+      item:
+        type: 'wool'
+        quantity: 1
+  terminal_specs:
+    max_steps: 1000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: False
+  LS_Imagine_specs:
+    repeat: 1
+
+############################################
+###    Env Specs for Collect Rollouts    ###
+############################################
+
+collect_rollouts_harvest_log_in_plains:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 0
+  sim_specs:
+    target_names: "log"
+    target_quantities: 1
+    specified_biome: "plains"
+    break_speed_multiplier: 100
+  reward_specs:
+    item_rewards: 
+      log:
+        reward: 1
+  success_specs:
+    terminal: false
+    reward: 0
+    any:
+      item:
+        type: 'log'
+        quantity: 1
+  terminal_specs:
+    max_steps: 1000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: True
+    save_freq: 50
+  LS_Imagine_specs:
+    repeat: 1
+
+collect_rollouts_harvest_water_bucket_in_plains:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 0
+  sim_specs:
+    target_names: "water_bucket"
+    target_quantities: 1
+    specified_biome: "plains"
+    break_speed_multiplier: 100
+  reward_specs:
+    item_rewards: 
+      water_bucket:
+        reward: 1
+  success_specs:
+    terminal: true
+    reward: 0
+    all:
+      item:
+        type: 'water_bucket'
+        quantity: 1
+  terminal_specs:
+    max_steps: 1000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: True
+    save_freq: 50
+  LS_Imagine_specs:
+    repeat: 1
+
+collect_rollouts_harvest_sand:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 0
+  sim_specs:
+    target_names: "sand"
+    target_quantities: 1
+    break_speed_multiplier: 100
+  reward_specs:
+    item_rewards: 
+      sand:
+        reward: 1
+  success_specs:
+    terminal: false
+    reward: 0
+    all:
+      item:
+        type: 'sand'
+        quantity: 1
+  terminal_specs:
+    max_steps: 1000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: True
+    save_freq: 50
+  LS_Imagine_specs:
+    repeat: 1
+
+collect_rollouts_mine_iron_ore:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 0
+  sim_specs:
+    target_names: "iron_ore"
+    target_quantities: 1
+    break_speed_multiplier: 100
+    initial_inventory:
+      mainhand:
+        name: "stone_pickaxe"
+        quantity: 1
+  reward_specs:
+    item_rewards: 
+      iron_ore:
+        reward: 1
+  success_specs:
+    terminal: True
+    reward: 0
+    all:
+      item:
+        type: 'iron_ore'
+        quantity: 1
+  terminal_specs:
+    max_steps: 2000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: True
+    save_freq: 50
+  LS_Imagine_specs:
+    repeat: 1
+
+collect_rollouts_harvest_wool_in_plains:
+  task_id: "harvest"
+  sim: minedojo
+  fast_reset: 0
+  sim_specs:
+    target_names: "wool"
+    target_quantities: 1
+    initial_mobs: "sheep"
+    initial_mob_spawn_range_low: [-15, 1, -15]
+    initial_mob_spawn_range_high: [15, 1, 15]
+    specified_biome: "plains"
+    break_speed_multiplier: 100
+  reward_specs:
+    item_rewards: 
+      wool:
+        reward: 1
+  success_specs:
+    terminal: true
+    reward: 0
+    any:
+      item:
+        type: 'wool'
+        quantity: 1
+  terminal_specs:
+    max_steps: 1000
+  screenshot_specs:
+    reset_flag: False
+    step_flag: True
+    save_freq: 20
+  LS_Imagine_specs:
+    repeat: 1
