@@ -97,7 +97,7 @@ class Logger:
         if config.wandb_key is None:
             raise ValueError("wandb_key is None")
         
-        # wandb.login(key=config.wandb_key)
+        wandb.login(key=config.wandb_key)
         wandb.init(project="LS-Imgine", dir=str(logdir), config = config.__dict__, name = str(logdir), save_code=True)
         wandb.config.update({"initial_step": step})
 

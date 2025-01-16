@@ -22,9 +22,9 @@ sys.path.append(str(pathlib.Path(__file__).parent))
 to_np = lambda x: x.detach().cpu().numpy()
 
 
-class LS_Imgine(nn.Module):
+class LS_Imagine(nn.Module):
     def __init__(self, obs_space, act_space, config, logger, dataset):
-        super(LS_Imgine, self).__init__()
+        super(LS_Imagine, self).__init__()
         self._config = config
         self._logger = logger
         self._should_log = tools.Every(config.log_every)
@@ -296,7 +296,7 @@ def main(config): # config is namespace
     print("Simulate agent.")
     train_dataset = make_dataset(train_eps, config)
     eval_dataset = make_dataset(eval_eps, config)
-    agent = LS_Imgine(
+    agent = LS_Imagine(
         train_envs[0].observation_space,
         train_envs[0].action_space,
         config,
@@ -340,7 +340,7 @@ def main(config): # config is namespace
         print("Start training.")
 
         state = tools.simulate(
-            agent, # LS_Imgine
+            agent, # LS_Imagine
             train_envs, 
             train_eps,
             config.traindir,

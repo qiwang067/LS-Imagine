@@ -29,6 +29,9 @@ logdir/
 # Ignore the entire logs folder
 logs/
 
+# Ignore the entire output_infos folder
+output_infos/
+
 # Ignore all contents of the weights folder
 weights/*
 

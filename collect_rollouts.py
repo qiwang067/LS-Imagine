@@ -10,7 +10,7 @@ from torch import distributions as torchd
 from datetime import datetime
 
 import tools
-from expr import LS_Imgine
+from expr import LS_Imagine
 from expr import make_env
 from parallel import Parallel, Damy
 
@@ -139,7 +139,7 @@ def main(config):
         step = 0
         logger = tools.Logger(config, logdir, config.action_repeat * step)
 
-        agent = LS_Imgine(
+        agent = LS_Imagine(
             envs[0].observation_space,
             envs[0].action_space,
             config,
