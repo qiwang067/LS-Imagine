@@ -99,7 +99,7 @@ LS-Imagine mainly consists of two stages: [fine-tuning a multimodal U-Net for ge
 You can either set up custom tasks in MineDojo ([instructions here](./docs/task_setups.md)) or use the task setups mentioned in our [paper](https://arxiv.org/pdf/2410.03618). LS-Imagine allows to start from any stage of the pipeline, as we provide corresponding checkpoint files for each stage to ensure flexibility.
 
 <a name="unet_finetune"></a>
-### U-Net Fine-tuning for Affordance Map Generation
+### U-Net Finetuning for Affordance Map Generation
 
 1. Download the pretrained U-Net weights from [here](<insert-link>) and save them to `./affordance_map/pretrained_unet_checkpoint/swin_unet_checkpoint.pth`.
 
