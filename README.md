@@ -82,11 +82,21 @@ We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the p
 
 <!-- 5. Download the Multimodal U-Net weight [here](https://drive.google.com/file/d/1Ylhw-MkT1UIUX5EyOosNmF09bWSlEjSf/view?usp=sharing), rename it to `swin_unet_checkpoint.pth`, place it at `finetune_unet/finetune_checkpoints/harvest_wool_in_plains` -->
 
+## Quick Links
+
+- [Visualization](#unet_finetune)
+  - [Play mode (default)](#play_mode)
+  - [Dataset mode (add `-d`)](#dataset_mode)
+  - [Other options, common to play/dataset modes](#other_options)
+- [Citation](#citation)
+- [Credits](#credits)
+
 ## Running LS-Imagine in MineDojo
 The pipeline of LS-Imagine mainly consists of three components: [fine-tuning a multimodal U-Net for generating affordance maps](#u-net-fine-tuning-for-affordance-map-generation), [learning world models and behaviors](#world-models-and-behavior-learning), and [success rate evaluation](#success-rate-evaluation). 
 
 You can either set up custom tasks in MineDojo ([instructions here](./docs/task_setups.md)) or use the task setups mentioned in our [paper](https://arxiv.org/pdf/2410.03618). LS-Imagine allows to start from any stage of the pipeline, as we provide corresponding checkpoint files for each stage to ensure flexibility.
 
+<a name="unet_finetune"></a>
 ### U-Net Fine-tuning for Affordance Map Generation
 
 1. Download the pretrained U-Net weights from [here](<insert-link>) and save them to `./affordance_map/pretrained_unet_checkpoint/swin_unet_checkpoint.pth`.
