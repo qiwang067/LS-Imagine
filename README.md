@@ -83,16 +83,17 @@ We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the p
 <!-- 5. Download the Multimodal U-Net weight [here](https://drive.google.com/file/d/1Ylhw-MkT1UIUX5EyOosNmF09bWSlEjSf/view?usp=sharing), rename it to `swin_unet_checkpoint.pth`, place it at `finetune_unet/finetune_checkpoints/harvest_wool_in_plains` -->
 
 ## Quick Links
-
-- [Visualization](#unet_finetune)
-  - [Play mode (default)](#play_mode)
-  - [Dataset mode (add `-d`)](#dataset_mode)
-  - [Other options, common to play/dataset modes](#other_options)
+- [Training LS-Imagine in MineDojo](#lsimagine_train)
+  - [U-Net Fine-tuning for Affordance Map Generation](#unet_finetune)
+  - [World Model and Behavior Learning](#agent_learn)
+- [Success Rate Evaluation](#evaluation)
 - [Citation](#citation)
 - [Credits](#credits)
 
+<a name="lsimagine_train"></a>
+
 ## Running LS-Imagine in MineDojo
-The pipeline of LS-Imagine mainly consists of three components: [fine-tuning a multimodal U-Net for generating affordance maps](#u-net-fine-tuning-for-affordance-map-generation), [learning world models and behaviors](#world-models-and-behavior-learning), and [success rate evaluation](#success-rate-evaluation). 
+The pipeline of LS-Imagine mainly consists of three components: [fine-tuning a multimodal U-Net for generating affordance maps](#unet_finetune), [learning world models and behaviors](#agent_learn), and [success rate evaluation](#evaluation). 
 
 You can either set up custom tasks in MineDojo ([instructions here](./docs/task_setups.md)) or use the task setups mentioned in our [paper](https://arxiv.org/pdf/2410.03618). LS-Imagine allows to start from any stage of the pipeline, as we provide corresponding checkpoint files for each stage to ensure flexibility.
 
@@ -135,6 +136,7 @@ You can either set up custom tasks in MineDojo ([instructions here](./docs/task_
 
 5. After training, the fine-tuned multimodal U-Net weights for the specified task will be saved in `./affordance_map/model_out`.
 
+<a name="agent_learn"></a>
 ### World Model and Behavior Learning
 
 Before starting the learning process for the world model and behavior, ensure you have obtained the multimodal U-Net weights. These weights can be either the pretrained weights we provide ([link here](<insert-link>)) or the task-specific fine-tuned weights from the [previous step](#u-net-fine-tuning-for-affordance-map-generation). 
@@ -165,7 +167,8 @@ Additionally, we offer U-Net weights fine-tuned for specific tasks as described 
         --logdir ./logdir
     ```
 
-### Success Rate Evaluation
+<a name="evaluation"></a>
+## Success Rate Evaluation
 
 After completing the training, the agent's weight file `latest.pt` will be saved in the `./logdir` directory. 
 <!--
@@ -196,6 +199,7 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
         --eval_episode_num 100
     ```
 
+<a name="citation"></a>
 ## Citation
 If you find this repo useful, please cite our paper:
 ```bib
@@ -207,7 +211,8 @@ If you find this repo useful, please cite our paper:
 }
 ```
 
-## Acknowledgement
+<a name="credits"></a>
+## Credits
 The codes refer to the implemention of [dreamerv3-torch](https://github.com/NM512/dreamerv3-torch) and [Swin-Unet](https://github.com/HuCaoFighting/Swin-Unet). Thanks for the authors！
 
 
