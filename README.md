@@ -34,6 +34,7 @@ Jiajian Li*, Qi Wang*, Yunbo Wang, Xin Jin, Yang Li, Wenjun Zeng, Xiaokang Yang
 [[arXiv]](https://arxiv.org/pdf/2410.03618)  [[Project Page]](https://qiwang067.github.io/ls-imagine) -->
 
 ## Getting Strated
+### Install the environment
 LS-Imagine is implemented and tested on Ubuntu 20.04 with python == 3.9:
 
 1. Create an environment
@@ -50,6 +51,34 @@ LS-Imagine is implemented and tested on Ubuntu 20.04 with python == 3.9:
     ```
 
 4. Download the MineCLIP weight [here](https://drive.google.com/file/d/1uaZM1ZLBz2dZWcn85rZmjP7LV6Sg5PZW/view?usp=sharing) and place them at `./weights/mineclip_attn.pth`.
+
+### Success Rate Evaluation
+
+After completing the training, the agent's weight files will be generated in the `./logdir` directory. Additionally, we provide pretrained weights for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
+
+<div align="center">
+
+| Task Name                  | Weight File                                                                                   |
+|----------------------------|-----------------------------------------------------------------------------------------------|
+| harvest_log_in_plains      | [latest_log.pt](https://drive.google.com/file/d/1_mhz49YPJDMNmPB-WwbzCG6zCTUidFQ3/view?usp=drive_link)                                                                |
+| harvest_water_with_bucket  | [latest_water.pt](https://drive.google.com/file/d/1DxtQ-ZckTVw1tFySspKRaxoaShDi_b8A/view?usp=drive_link)                                                              |
+| harvest_sand               | [latest_sand.pt](https://drive.google.com/file/d/1xa6JwV7rh-IfGoFjWDoneWpaTwPxLWb_/view?usp=drive_link)                                                               |
+| mine_iron_ore              | [latest_iron.pt](https://drive.google.com/file/d/1FOIRGQJvgeQptK8-4cVVGv_jeNIy8kw7/view?usp=drive_link)                                                               |
+| shear_sheep                | [latest_wool.pt](https://drive.google.com/file/d/1sx7IVOZ1JYs0BJHD3TWZcPb-f-x5xfA3/view?usp=drive_link)                                                               |
+
+</div>
+
+1. Set up the task for evaluation ([instructions here](./docs/task_setups.md)).
+2. Retrieve your **Weights & Biases (wandb)** API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
+3. Run the following command to test the success rate:
+    ```bash
+    MINEDOJO_HEADLESS=1 python test.py \
+        --configs minedojo \
+        --task minedojo_test_harvest_log_in_plains \
+        --logdir ./logdir \
+        --agent_checkpoint_dir {path_to_latest.pt} \
+        --eval_episode_num 100
+    ```
 
 <!-- 5. Download the Multimodal U-Net weight [here](https://drive.google.com/file/d/1Ylhw-MkT1UIUX5EyOosNmF09bWSlEjSf/view?usp=sharing), rename it to `swin_unet_checkpoint.pth`, place it at `finetune_unet/finetune_checkpoints/harvest_wool_in_plains` -->
 
