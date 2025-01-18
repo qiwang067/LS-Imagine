@@ -33,7 +33,7 @@ Jiajian Li*, Qi Wang*, Yunbo Wang, Xin Jin, Yang Li, Wenjun Zeng, Xiaokang Yang
 
 [[arXiv]](https://arxiv.org/pdf/2410.03618)  [[Project Page]](https://qiwang067.github.io/ls-imagine) -->
 
-## Getting Strated
+## Getting Started
 ### Install the environment
 LS-Imagine is implemented and tested on Ubuntu 20.04 with python == 3.9:
 
@@ -52,7 +52,7 @@ LS-Imagine is implemented and tested on Ubuntu 20.04 with python == 3.9:
 
 4. Download the MineCLIP weight [here](https://drive.google.com/file/d/1uaZM1ZLBz2dZWcn85rZmjP7LV6Sg5PZW/view?usp=sharing) and place them at `./weights/mineclip_attn.pth`.
 
-### Success Rate Evaluation
+### Pretrained weights
 
 After completing the training, the agent's weight files will be generated in the `./logdir` directory. Additionally, we provide pretrained weights for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
 
