@@ -68,6 +68,7 @@ We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the p
 
 </div>
 
+<a name="evaluation_with_checkpoints"></a>
 1. Set up the task for evaluation ([instructions here](./docs/task_setups.md)).
 2. Retrieve your **Weights & Biases (wandb)** API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
 3. Run the following command to test the success rate:
@@ -170,7 +171,7 @@ Additionally, we offer U-Net weights fine-tuned for specific tasks as described 
 <a name="evaluation"></a>
 ## Success Rate Evaluation
 
-After completing the training, the agent's weight file `latest.pt` will be saved in the `./logdir` directory. 
+After completing the training, the agent's weight file `latest.pt` will be saved in the `./logdir` directory. You can check [here](evaluation_with_checkpoints).
 <!--
 Additionally, we provide pretrained weights for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
 
@@ -185,7 +186,7 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
 | shear_sheep                | [latest_wool.pt](https://drive.google.com/file/d/1sx7IVOZ1JYs0BJHD3TWZcPb-f-x5xfA3/view?usp=drive_link)                                                               |
 
 </div>
--->
+
 
 1. Set up the task for evaluation ([instructions here](./docs/task_setups.md)).
 2. Retrieve your **Weights & Biases (wandb)** API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
@@ -198,6 +199,7 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
         --agent_checkpoint_dir {path_to_latest.pt} \
         --eval_episode_num 100
     ```
+-->
 
 ## Citation
 If you find this repo useful, please cite our paper:
