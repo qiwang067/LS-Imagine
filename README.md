@@ -35,7 +35,7 @@ Jiajian Li*, Qi Wang*, Yunbo Wang, Xin Jin, Yang Li, Wenjun Zeng, Xiaokang Yang
 
 ## Getting Started
 ### Install the Environment
-LS-Imagine is implemented and tested on Ubuntu 20.04 with python == 3.9:
+LS-Imagine is implemented and tested on Ubuntu 20.04 with python=3.9:
 
 1. Create an environment
     ```bash
