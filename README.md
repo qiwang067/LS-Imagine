@@ -93,7 +93,7 @@ We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the p
 <a name="lsimagine_train"></a>
 
 ## Running LS-Imagine in MineDojo
-LS-Imagine consists of three stages: [fine-tuning a multimodal U-Net for generating affordance maps](#unet_finetune), [learning world models and behaviors](#agent_learn), and [success rate evaluation](#evaluation). 
+LS-Imagine mainly consists of two stages: [fine-tuning a multimodal U-Net for generating affordance maps](#unet_finetune), [learning world models and behaviors](#agent_learn). 
 
 You can either set up custom tasks in MineDojo ([instructions here](./docs/task_setups.md)) or use the task setups mentioned in our [paper](https://arxiv.org/pdf/2410.03618). LS-Imagine allows to start from any stage of the pipeline, as we provide corresponding checkpoint files for each stage to ensure flexibility.
 
