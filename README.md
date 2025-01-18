@@ -171,7 +171,7 @@ Additionally, we offer U-Net weights fine-tuned for specific tasks as described 
 <a name="evaluation"></a>
 ## Success Rate Evaluation
 
-After completing the training, the agent's weight file `latest.pt` will be saved in the `./logdir` directory. You can check [here](#evaluation_with_checkpoints).
+After completing the training, the agent's weight file `latest.pt` will be saved in the `./logdir` directory. You can evaluate the performance of LS-Imagine as mentioned in [here](#evaluation_with_checkpoints).
 <!--
 Additionally, we provide pretrained weights for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
 
