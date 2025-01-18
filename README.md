@@ -87,8 +87,8 @@ We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the p
   - [U-Net Fine-tuning for Affordance Map Generation](#unet_finetune)
   - [World Model and Behavior Learning](#agent_learn)
 - [Success Rate Evaluation](#evaluation)
-- [Citation](#citation)
-- [Credits](#credits)
+- [Citation](#_citation)
+- [Credits](#_credits)
 
 <a name="lsimagine_train"></a>
 
@@ -199,7 +199,7 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
         --eval_episode_num 100
     ```
 
-<a name="citation"></a>
+<a name="_citation"></a>
 ## Citation
 If you find this repo useful, please cite our paper:
 ```bib
@@ -211,7 +211,7 @@ If you find this repo useful, please cite our paper:
 }
 ```
 
-<a name="credits"></a>
+<a name="_credits"></a>
 ## Credits
 The codes refer to the implemention of [dreamerv3-torch](https://github.com/NM512/dreamerv3-torch) and [Swin-Unet](https://github.com/HuCaoFighting/Swin-Unet). Thanks for the authors！
 
