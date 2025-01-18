@@ -199,7 +199,6 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
         --eval_episode_num 100
     ```
 
-<a name="citation"></a>
 ## Citation
 If you find this repo useful, please cite our paper:
 ```bib
