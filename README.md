@@ -157,7 +157,7 @@ Additionally, we offer U-Net weights fine-tuned for specific tasks as described 
 
 ### Success Rate Evaluation
 
-After completing the training, the agent's weight files will be generated in the `./logdir` directory. 
+After completing the training, the agent's weight file `latest.pt` will be saved in the `./logdir` directory. 
 <!--
 Additionally, we provide pretrained weights for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
 
