@@ -54,7 +54,7 @@ LS-Imagine is implemented and tested on Ubuntu 20.04 with python == 3.9:
 
 ### Pretrained weights
 
-After completing the training, the agent's weight files will be generated in the `./logdir` directory. Additionally, we provide pretrained weights for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
+We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
 
 <div align="center">
 
