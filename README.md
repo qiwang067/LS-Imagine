@@ -68,8 +68,8 @@ We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the p
 
 </div>
 
-To start a evaluating run from one of these checkpoints:
 <a name="evaluation_with_checkpoints"></a>
+To start a evaluating run from one of these checkpoints:
 1. Set up the task for evaluation ([instructions here](./docs/task_setups.md)).
 2. Retrieve your **Weights & Biases (wandb)** API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
 3. Run the following command to test the success rate:
