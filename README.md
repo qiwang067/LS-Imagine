@@ -139,7 +139,7 @@ You can either set up custom tasks in MineDojo ([instructions here](./docs/task_
 
 Before starting the learning process for the world model and behavior, ensure you have obtained the multimodal U-Net weights. These weights can be either the pretrained weights we provide ([link here](<insert-link>)) or the task-specific fine-tuned weights from the [previous step](#u-net-fine-tuning-for-affordance-map-generation). 
 
-Additionally, we offer U-Net weights fine-tuned for specific tasks as described in the [paper](https://arxiv.org/pdf/2410.03618). You can download these weights using the links provided in the table below and place it at `./affordance_map/finetune_unet/finetune_checkpoints/{task_name}/swin_unet_checkpoint.pth`: 
+Additionally, we offer U-Net weights fine-tuned for specific tasks as described in the [paper](https://arxiv.org/pdf/2410.03618). You can download these weights using the links provided in the table below and place them at `./affordance_map/finetune_unet/finetune_checkpoints/{task_name}/swin_unet_checkpoint.pth`: 
 
 <div align="center">
 
