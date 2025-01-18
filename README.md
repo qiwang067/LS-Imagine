@@ -157,7 +157,9 @@ Additionally, we offer U-Net weights fine-tuned for specific tasks as described 
 
 ### Success Rate Evaluation
 
-After completing the training, the agent's weight files will be generated in the `./logdir` directory. Additionally, we provide pretrained weights for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
+After completing the training, the agent's weight files will be generated in the `./logdir` directory. 
+<!--
+Additionally, we provide pretrained weights for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
 
 <div align="center">
 
@@ -170,6 +172,7 @@ After completing the training, the agent's weight files will be generated in the
 | shear_sheep                | [latest_wool.pt](https://drive.google.com/file/d/1sx7IVOZ1JYs0BJHD3TWZcPb-f-x5xfA3/view?usp=drive_link)                                                               |
 
 </div>
+-->
 
 1. Set up the task for evaluation ([instructions here](./docs/task_setups.md)).
 2. Retrieve your **Weights & Biases (wandb)** API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
