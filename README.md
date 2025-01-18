@@ -155,6 +155,7 @@ After completing the training, the agent's weight files will be generated in the
     ```
 
 ## Citation
+If you find this repo useful, please cite the following paper.
 ```bib
 @article{li2024open,
   title={Open-World Reinforcement Learning over Long Short-Term Imagination}, 
