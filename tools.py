@@ -13,6 +13,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 from torch import distributions as torchd
+from torch.utils.tensorboard import SummaryWriter
 from collections import defaultdict
 from bisect import insort
 
@@ -86,6 +87,7 @@ class TimeRecording:
 
 class Logger:
     def __init__(self, config, logdir, step):
+        self._wandb = config.use_wandb
         self._logdir = logdir
         self._last_step = None
         self._last_time = None
@@ -93,13 +95,16 @@ class Logger:
         self._images = {}
         self._videos = {}
         self.step = step
-       
-        if config.wandb_key is None:
-            raise ValueError("wandb_key is None")
-        
-        wandb.login(key=config.wandb_key)
-        wandb.init(project="LS-Imgine", dir=str(logdir), config = config.__dict__, name = str(logdir), save_code=True)
-        wandb.config.update({"initial_step": step})
+
+        if self._wandb:
+            if config.wandb_key is None:
+                raise ValueError("wandb_key is None")
+            wandb.login(key=config.wandb_key)
+            wandb.init(project="LS-Imgine", dir=str(logdir), config = config.__dict__, name = str(logdir), save_code=True)
+            wandb.config.update({"initial_step": step})
+
+        else:
+            self._writer = SummaryWriter(log_dir=str(logdir), max_queue=1000)
 
     def scalar(self, name, value):
         self._scalars[name] = float(value)
@@ -120,23 +125,45 @@ class Logger:
         with (self._logdir / "metrics.jsonl").open("a") as f:
             f.write(json.dumps({"step": step, **dict(scalars)}) + "\n")
 
-        for name, value in scalars:
-            wandb.log({name: value}, step=step)
+        if self._wandb:
+            for name, value in scalars:
+                wandb.log({name: value}, step=step)
 
-        for name, value in self._images.items():
-            wandb.log({name: [wandb.Image(value)]}, step=step)
+            for name, value in self._images.items():
+                wandb.log({name: [wandb.Image(value)]}, step=step)
 
-        for name, value in self._videos.items():
-            name = name if isinstance(name, str) else name.decode("utf-8")
-            if np.issubdtype(value.dtype, np.floating):
-                value = np.clip(255 * value, 0, 255).astype(np.uint8)
-            B, T, H, W, C = value.shape
-            value = value.transpose(1, 4, 2, 0, 3).reshape((T, C, H, B * W))
-            wandb.log({name: wandb.Video(value, fps=16, format="mp4")}, step=step)
+            for name, value in self._videos.items():
+                name = name if isinstance(name, str) else name.decode("utf-8")
+                if np.issubdtype(value.dtype, np.floating):
+                    value = np.clip(255 * value, 0, 255).astype(np.uint8)
+                B, T, H, W, C = value.shape
+                value = value.transpose(1, 4, 2, 0, 3).reshape((T, C, H, B * W))
+                wandb.log({name: wandb.Video(value, fps=16, format="mp4")}, step=step)
 
-        self._scalars = {}
-        self._images = {}
-        self._videos = {}
+            self._scalars = {}
+            self._images = {}
+            self._videos = {}
+
+        else:
+            for name, value in scalars:
+                if "/" not in name:
+                    self._writer.add_scalar("scalars/" + name, value, step)
+                else:
+                    self._writer.add_scalar(name, value, step)
+            for name, value in self._images.items():
+                self._writer.add_image(name, value, step)
+            for name, value in self._videos.items():
+                name = name if isinstance(name, str) else name.decode("utf-8")
+                if np.issubdtype(value.dtype, np.floating):
+                    value = np.clip(255 * value, 0, 255).astype(np.uint8)
+                B, T, H, W, C = value.shape
+                value = value.transpose(1, 4, 2, 0, 3).reshape((1, T, C, H, B * W))
+                self._writer.add_video(name, value, step, 16)
+
+            self._writer.flush()
+            self._scalars = {}
+            self._images = {}
+            self._videos = {}
 
     def _compute_fps(self, step):
         if self._last_step is None:
@@ -150,17 +177,24 @@ class Logger:
         return steps / duration
 
     def offline_scalar(self, name, value, step):
-        wandb.log({name: value}, step=step)
+        if self._wandb:
+            wandb.log({name: value}, step=step)
+        else:
+            self._writer.add_scalar("scalars/" + name, value, step)
 
     def offline_video(self, name, value, step):
         if np.issubdtype(value.dtype, np.floating):
             value = np.clip(255 * value, 0, 255).astype(np.uint8)
         B, T, H, W, C = value.shape
         value = value.transpose(1, 4, 2, 0, 3).reshape((T, C, H, B * W))
-        wandb.log({name: wandb.Video(value, fps=16, format="mp4")}, step=step)
+        if self._wandb:
+            wandb.log({name: wandb.Video(value, fps=16, format="mp4")}, step=step)
+        else:
+            self._writer.add_video(name, value, step, 16)
 
     def finish(self):
-        wandb.finish()
+        if self._wandb:
+            wandb.finish()
 
 def calculate_accumulated_reward(rewards, intrinsics, gamma):
     if len(rewards) == 0:

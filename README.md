@@ -52,6 +52,12 @@ LS-Imagine is implemented and tested on Ubuntu 20.04 with python==3.9:
 
 4. Download the MineCLIP weight [here](https://drive.google.com/file/d/1uaZM1ZLBz2dZWcn85rZmjP7LV6Sg5PZW/view?usp=sharing) and place them at `./weights/mineclip_attn.pth`.
 
+5. We provide two options for recording data during the training process: TensorBoard and Weights & Biases (wandb). 
+
+   - To use TensorBoard, set `use_wandb` to `False` in the `./config.yaml` file.
+   - To use wandb, set `use_wandb` to `True` in the `./config.yaml` file. Additionally, retrieve your Weights & Biases (wandb) API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
+
+
 ### Pretrained Weights
 
 We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the paper. You can download them using the links in the table below and rename the downloaded file to `latest.pt`:
@@ -70,9 +76,10 @@ We provide pretrained weights of **LS-Imagine** for the tasks mentioned in the p
 
 <a name="evaluation_with_checkpoints"></a>
 To start a evaluating run from one of these checkpoints:
+
 1. Set up the task for evaluation ([instructions here](./docs/task_setups.md)).
-2. Retrieve your **Weights & Biases (wandb)** API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
-3. Run the following command to test the success rate:
+
+2. Run the following command to test the success rate:
     ```bash
     MINEDOJO_HEADLESS=1 python test.py \
         --configs minedojo \
@@ -85,10 +92,14 @@ To start a evaluating run from one of these checkpoints:
 <!-- 5. Download the Multimodal U-Net weight [here](https://drive.google.com/file/d/1Ylhw-MkT1UIUX5EyOosNmF09bWSlEjSf/view?usp=sharing), rename it to `swin_unet_checkpoint.pth`, place it at `finetune_unet/finetune_checkpoints/harvest_wool_in_plains` -->
 
 ## Quick Links
-- [Training LS-Imagine in MineDojo](#lsimagine_train)
-  - [U-Net Fine-tuning for Affordance Map Generation](#unet_finetune)
-  - [World Model and Behavior Learning](#agent_learn)
-- [Success Rate Evaluation](#evaluation)
+- [Getting Started](#getting-started)
+  - [Install the Environment](#install-the-environment)
+  - [Pretrained Weights](#pretrained-weights)
+- [Quick Links](#quick-links)
+- [Training LS-Imagine in MineDojo](#training-ls-imagine-in-minedojo)
+  - [U-Net Finetuning for Affordance Map Generation](#u-net-finetuning-for-affordance-map-generation)
+  - [World Model and Behavior Learning](#world-model-and-behavior-learning)
+- [Success Rate Evaluation](#success-rate-evaluation)
 - [Citation](#citation)
 - [Credits](#credits)
 
@@ -159,9 +170,7 @@ We provide U-Net weights fine-tuned for specific tasks as described in the [pape
 
 1. Set up the task and correctly configure the `unet_checkpoint_dir` to ensure the U-Net weights are properly located and loaded ([instructions here](./docs/task_setups.md)).
 
-2. Retrieve your Weights & Biases (wandb) API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
-
-3. Run the following command to start training the world model and behavior:
+2. Run the following command to start training the world model and behavior:
     ```bash
     MINEDOJO_HEADLESS=1 python expr.py \
         --configs minedojo \

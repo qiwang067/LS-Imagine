@@ -1,5 +1,6 @@
 defaults:
 
+  use_wandb: False
   wandb_key: None
   logdir: null
   traindir: null
