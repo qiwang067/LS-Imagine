@@ -39,4 +39,7 @@ weights/*
 *.log
 
 # Ignore all files with the .sh extension
-*.sh
+# *.sh
+
+# Ignore DynDream_exprs.sh
+DynDream_exprs.sh

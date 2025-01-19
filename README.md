@@ -81,12 +81,7 @@ To start a evaluating run from one of these checkpoints:
 
 2. Run the following command to test the success rate:
     ```bash
-    MINEDOJO_HEADLESS=1 python test.py \
-        --configs minedojo \
-        --task minedojo_test_harvest_log_in_plains \
-        --logdir ./logdir \
-        --agent_checkpoint_dir {path_to_latest.pt} \
-        --eval_episode_num 100
+    ./scripts/test.sh /path/to/latest.pt 100 test_harvest_log_in_plains
     ```
 
 <!-- 5. Download the Multimodal U-Net weight [here](https://drive.google.com/file/d/1Ylhw-MkT1UIUX5EyOosNmF09bWSlEjSf/view?usp=sharing), rename it to `swin_unet_checkpoint.pth`, place it at `finetune_unet/finetune_checkpoints/harvest_wool_in_plains` -->
@@ -114,34 +109,17 @@ You can either set up custom tasks in MineDojo ([instructions here](./docs/task_
 
 2. Set up the task ([instructions here](./docs/task_setups.md)) and run the following command to collect data:
     ```bash
-    MINEDOJO_HEADLESS=1 python collect_rollouts.py \
-        --configs minedojo \
-        --task minedojo_{task_name} \
-        --logdir ./affordance_map/finetune_unet
+    ./script/collect.sh your_task_name
     ```
 
 3. Annotate the collected data using a method based on sliding bounding box scanning and simulated exploration to generate the fine-tuning dataset:
     ```bash
-    python affordance_map/generate_dataset_for_finetuning.py \
-        variant=attn \
-        ckpt.path="weights/mineclip_attn.pth" \
-        finetune_task="minedojo_{task_name}" \
-        prompt="{prompt}"
+    ./scripts/affordance.sh your_task_name your_prompt
     ```
 
 4. Fine-tune the pretrained U-Net weights using the annotated dataset to generate task-specific affordance maps:
     ```bash
-    python affordance_map/finetune.py \
-        --root_path affordance_map/datasets/Minecraft \
-        --dataset Minecraft \
-        --list_dir ./affordance_map/lists/lists_Minecraft \
-        --num_class 1 \
-        --cfg affordance_map/configs/swin_tiny_patch4_window7_224_lite.yaml \
-        --max_epochs 200 \
-        --output_dir ./affordance_map/model_out \
-        --base_lr 0.01 \
-        --batch_size 24 \
-        --finetune_task minedojo_{task_name}
+    ./scripts/finetune_unet.sh your_task_name
     ```
 
 5. After training, the fine-tuned multimodal U-Net weights for the specified task will be saved in `./affordance_map/model_out`.
@@ -169,10 +147,7 @@ We provide U-Net weights fine-tuned for specific tasks as described in the [pape
 
 2. Run the following command to start training the world model and behavior:
     ```bash
-    MINEDOJO_HEADLESS=1 python expr.py \
-        --configs minedojo \
-        --task minedojo_{task_name} \
-        --logdir ./logdir
+    ./scripts/train.sh your_task_name
     ```
 
 <a name="evaluation"></a>
