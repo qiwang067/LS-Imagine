@@ -92,6 +92,7 @@ To start a evaluating run from one of these checkpoints:
 <!-- 5. Download the Multimodal U-Net weight [here](https://drive.google.com/file/d/1Ylhw-MkT1UIUX5EyOosNmF09bWSlEjSf/view?usp=sharing), rename it to `swin_unet_checkpoint.pth`, place it at `finetune_unet/finetune_checkpoints/harvest_wool_in_plains` -->
 
 ## Quick Links
+
 - [Getting Started](#getting-started)
   - [Install the Environment](#install-the-environment)
   - [Pretrained Weights](#pretrained-weights)
