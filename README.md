@@ -93,10 +93,6 @@ To start a evaluating run from one of these checkpoints:
 
 ## Quick Links
 
-- [Getting Started](#getting-started)
-  - [Install the Environment](#install-the-environment)
-  - [Pretrained Weights](#pretrained-weights)
-- [Quick Links](#quick-links)
 - [Training LS-Imagine in MineDojo](#training-ls-imagine-in-minedojo)
   - [U-Net Finetuning for Affordance Map Generation](#u-net-finetuning-for-affordance-map-generation)
   - [World Model and Behavior Learning](#world-model-and-behavior-learning)
