@@ -81,7 +81,7 @@ To start a evaluating run from one of these checkpoints:
 
 2. Run the following command to test the success rate:
     ```bash
-    ./scripts/test.sh /path/to/latest.pt 100 test_harvest_log_in_plains
+    sh ./scripts/test.sh /path/to/latest.pt 100 test_harvest_log_in_plains
     ```
 
 <!-- 5. Download the Multimodal U-Net weight [here](https://drive.google.com/file/d/1Ylhw-MkT1UIUX5EyOosNmF09bWSlEjSf/view?usp=sharing), rename it to `swin_unet_checkpoint.pth`, place it at `finetune_unet/finetune_checkpoints/harvest_wool_in_plains` -->
@@ -109,17 +109,17 @@ You can either set up custom tasks in MineDojo ([instructions here](./docs/task_
 
 2. Set up the task ([instructions here](./docs/task_setups.md)) and run the following command to collect data:
     ```bash
-    ./script/collect.sh your_task_name
+    sh ./script/collect.sh your_task_name
     ```
 
 3. Annotate the collected data using a method based on sliding bounding box scanning and simulated exploration to generate the fine-tuning dataset:
     ```bash
-    ./scripts/affordance.sh your_task_name your_prompt
+    sh ./scripts/affordance.sh your_task_name your_prompt
     ```
 
 4. Fine-tune the pretrained U-Net weights using the annotated dataset to generate task-specific affordance maps:
     ```bash
-    ./scripts/finetune_unet.sh your_task_name
+    sh ./scripts/finetune_unet.sh your_task_name
     ```
 
 5. After training, the fine-tuned multimodal U-Net weights for the specified task will be saved in `./affordance_map/model_out`.
@@ -146,7 +146,7 @@ You can download these weights using the links provided in the table below and p
 
 2. Run the following command to start training the world model and behavior:
     ```bash
-    ./scripts/train.sh your_task_name
+    sh ./scripts/train.sh your_task_name
     ```
 
 <a name="evaluation"></a>
