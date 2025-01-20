@@ -127,10 +127,7 @@ You can either set up custom tasks in MineDojo ([instructions here](./docs/task_
 <a name="agent_learn"></a>
 ### World Model and Behavior Learning
 
-Before starting the learning process for the world model and behavior, ensure you have obtained the multimodal U-Net weights. These weights can be either the pretrained weights we provide ([link here](https://drive.google.com/file/d/1N2VTC458txxW5UABQDgmRTEYzeYTEjIX/view?usp=sharing)) or the task-specific fine-tuned weights from the [previous step](#unet_finetune). 
-
-We provide U-Net weights fine-tuned for specific tasks as described in the [paper](https://arxiv.org/pdf/2410.03618). You can download these weights using the links provided in the table below and place them at `./affordance_map/finetune_unet/finetune_checkpoints/{task_name}/swin_unet_checkpoint.pth`: 
-
+Before starting the learning process for the world model and behavior, ensure you have obtained the multimodal U-Net weights. We provide the pretrained U-Net weights ([link here](https://drive.google.com/file/d/1N2VTC458txxW5UABQDgmRTEYzeYTEjIX/view?usp=sharing)) and the task-specific fine-tuned U-Net weights: 
 <div align="center">
 
 | Task Name                  | Weight File                                                                                                                   |
@@ -142,6 +139,8 @@ We provide U-Net weights fine-tuned for specific tasks as described in the [pape
 | shear_sheep                | [swin_unet_checkpoint_wool.pth](https://drive.google.com/file/d/1uaZM1ZLBz2dZWcn85rZmjP7LV6Sg5PZW/view?usp=sharing)          |
 
 </div>
+
+You can download these weights using the links provided in the table below and place them at `./affordance_map/finetune_unet/finetune_checkpoints/{task_name}/swin_unet_checkpoint.pth`: 
 
 1. Set up the task and correctly configure the `unet_checkpoint_dir` to ensure the U-Net weights are properly located and loaded ([instructions here](./docs/task_setups.md)).
 
