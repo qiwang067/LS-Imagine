@@ -185,11 +185,11 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
 ## Citation
 If you find this repo useful, please cite our paper:
 ```bib
-@article{li2024open,
-  title={Open-World Reinforcement Learning over Long Short-Term Imagination}, 
-  author={Jiajian Li and Qi Wang and Yunbo Wang and Xin Jin and Yang Li and Wenjun Zeng and Xiaokang Yang},
-  journal={arXiv preprint arXiv:2410.03618},
-  year={2024}
+@inproceedings{li2025open,
+    title={Open-World Reinforcement Learning over Long Short-Term Imagination}, 
+    author={Jiajian Li and Qi Wang and Yunbo Wang and Xin Jin and Yang Li and Wenjun Zeng and Xiaokang Yang},
+    booktitle={ICLR},
+    year={2025}
 }
 ```
 
