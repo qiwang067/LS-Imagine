@@ -1,4 +1,4 @@
-<h1 align="center"> Open-World Reinforcement Learning over Long Short-Term Imagination </h1>
+<h1 align="center"> [ICLR 2025] Open-World Reinforcement Learning over Long Short-Term Imagination </h1>
 <p align="center">
     Jiajian Li*
     ·
@@ -15,7 +15,7 @@
     Xiaokang Yang
   </p>
 
-<h3 align="center"> <a href="https://arxiv.org/pdf/2410.03618" target="_blank"> arXiv </a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://qiwang067.github.io/ls-imagine" target="_blank"> Website </a> &nbsp;&nbsp; </h3>
+<h3 align="center"> <a href="https://openreview.net/pdf?id=vzItLaEoDa" target="_blank"> Paper </a> &nbsp;&nbsp; |&nbsp;&nbsp;   <a href="https://arxiv.org/pdf/2410.03618" target="_blank"> arXiv </a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://qiwang067.github.io/ls-imagine" target="_blank"> Website </a> &nbsp;&nbsp; </h3>
   <div align="center"></div>
 
 <p align="center">
