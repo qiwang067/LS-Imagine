@@ -48,16 +48,19 @@ LS-Imagine is implemented and tested on Ubuntu 20.04 with python==3.9:
     conda activate ls_imagine 
     ```
 
-2. Install Java: JDK `1.8.0_171`. Then install the [MineDojo](https://github.com/MineDojo/MineDojo) environment and [MineCLIP](https://github.com/MineDojo/MineCLIP) following their official documents. During the installation of MineDojo, various errors may occur. **We provide the detailed installation process and solutions to common errors, please refer to [here](./docs/minedojo_installation.md).**
+2. Install Java: JDK `1.8.0_171`. Then install the [MineDojo](https://github.com/MineDojo/MineDojo) environment and [MineCLIP](https://github.com/MineDojo/MineCLIP) following their official documents. During the installation of MineDojo, various errors may occur.
 
-3. Install dependencies
+> [!NOTE]
+>**We provide the detailed installation process and solutions to common errors, please refer to [here](./docs/minedojo_installation.md).**
+
+4. Install dependencies
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Download the MineCLIP weight [here](https://drive.google.com/file/d/1uaZM1ZLBz2dZWcn85rZmjP7LV6Sg5PZW/view?usp=sharing) and place them at `./weights/mineclip_attn.pth`.
+5. Download the MineCLIP weight [here](https://drive.google.com/file/d/1uaZM1ZLBz2dZWcn85rZmjP7LV6Sg5PZW/view?usp=sharing) and place them at `./weights/mineclip_attn.pth`.
 
-5. We provide two options for recording data during the training process: TensorBoard and Weights & Biases (wandb). 
+6. We provide two options for recording data during the training process: TensorBoard and Weights & Biases (wandb). 
 
    - To use TensorBoard, set `use_wandb` to `False` in the `./config.yaml` file.
    - To use wandb (optional), set `use_wandb` to `True` in the `./config.yaml` file. Additionally, retrieve your wandb API key and set it in the `./config.yaml` file under the field `wandb_key: {your_wandb_api_key}`.
