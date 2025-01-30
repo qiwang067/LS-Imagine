@@ -19,7 +19,7 @@
   <div align="center"></div>
 <p align="center">
   <a href="#quick-start"><b>⚡ Quick Start</b></a> |
-  <a href="#pretrained-weights"><b>📥 Model Download</b></a> |
+  <a href="#pretrained-weights"><b>📥 Checkpoints Download</b></a> |
   <a href="#citation"><b>📖 Citation</b></a> <br>
 </p>
 
