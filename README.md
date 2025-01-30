@@ -18,8 +18,8 @@
 <h3 align="center"> <a href="https://openreview.net/pdf?id=vzItLaEoDa" target="_blank"> Paper </a> &nbsp;&nbsp; |&nbsp;&nbsp;   <a href="https://arxiv.org/pdf/2410.03618" target="_blank"> arXiv </a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://qiwang067.github.io/ls-imagine" target="_blank"> Website </a> &nbsp;&nbsp; </h3>
   <div align="center"></div>
 <p align="center">
-  <a href="#pretrained-weights"><b>📥 Model Download</b></a> |
   <a href="#quick-start"><b>⚡ Quick Start</b></a> |
+  <a href="#pretrained-weights"><b>📥 Model Download</b></a> |
   <a href="#citation"><b>📖 Citation</b></a> <br>
 </p>
 
