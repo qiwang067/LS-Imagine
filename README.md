@@ -17,6 +17,11 @@
 
 <h3 align="center"> <a href="https://openreview.net/pdf?id=vzItLaEoDa" target="_blank"> Paper </a> &nbsp;&nbsp; |&nbsp;&nbsp;   <a href="https://arxiv.org/pdf/2410.03618" target="_blank"> arXiv </a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://qiwang067.github.io/ls-imagine" target="_blank"> Website </a> &nbsp;&nbsp; </h3>
   <div align="center"></div>
+<p align="center">
+  <a href="#pretrained-weights"><b>📥 Model Download</b></a> |
+  <a href="#quick-start"><b>⚡ Quick Start</b></a> |
+  <a href="#citation"><b>📖 Citation</b></a> <br>
+</p>
 
 <p align="center">
 <img src="assets/overview.png" alt="Teaser image" />
@@ -33,7 +38,7 @@ Jiajian Li*, Qi Wang*, Yunbo Wang, Xin Jin, Yang Li, Wenjun Zeng, Xiaokang Yang
 
 [[arXiv]](https://arxiv.org/pdf/2410.03618)  [[Project Page]](https://qiwang067.github.io/ls-imagine) -->
 
-## Getting Started
+## Quick Start
 ### Install the Environment
 LS-Imagine is implemented and tested on Ubuntu 20.04 with python==3.9:
 
