@@ -1,4 +1,4 @@
-<h1 align="center"> [ICLR 2025] Open-World Reinforcement Learning over Long Short-Term Imagination </h1>
+<h1 align="center"> [ICLR 2025 Oral] Open-World Reinforcement Learning over Long Short-Term Imagination </h1>
 <p align="center">
     Jiajian Li*
     ·
