@@ -54,7 +54,7 @@ LS-Imagine is implemented and tested on Ubuntu 20.04 with python==3.9:
 
 2. Install Java: JDK `1.8.0_171`. Then install the [MineDojo](https://github.com/MineDojo/MineDojo) environment and [MineCLIP](https://github.com/MineDojo/MineCLIP) following their official documents. During the installation of MineDojo, various errors may occur.
 
-> [!NOTE]
+> [!IMPORTANT]
 >**We provide the detailed installation process and solutions to common errors, please refer to [here](./docs/minedojo_installation.md).**
 
 4. Install dependencies
