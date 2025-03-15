@@ -1,5 +1,5 @@
 <h1 align="center">
- [ICLR 2025 Oral] <img src="./assets/minecraft.png" alt="logo" style="width: 50px; height: 50px; margin-right: 7px; margin-bottom: -13px;">Open-World Reinforcement Learning over Long Short-Term Imagination </h1>
+ [ICLR 2025 Oral] <img src="./assets/minecraft.png" alt="logo" style="width: 32px; height: 32px; margin-right: 7px; margin-bottom: 0px;">Open-World Reinforcement Learning over Long Short-Term Imagination </h1>
 <p align="center">
     Jiajian Li*
     ·
