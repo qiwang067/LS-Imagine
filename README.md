@@ -149,7 +149,7 @@ Before starting the learning process for the world model and behavior, ensure yo
 | harvest_water_with_bucket  | [swin_unet_checkpoint_water.pth](https://drive.google.com/file/d/1Z-7vDNOiKxFE0iaApjYznALkLu8F4cXD/view?usp=sharing)          |
 | harvest_sand               | [swin_unet_checkpoint_sand.pth](https://drive.google.com/file/d/1ZeKVY6Y99Nch_wDXOgl_WX1IEyuIFNrs/view?usp=sharing)          |
 | mine_iron_ore              | [swin_unet_checkpoint_iron.pth](https://drive.google.com/file/d/1_sUWXeVEFEYHpQmw0115pMFYJxKmMZyL/view?usp=sharing)          |
-| shear_sheep                | [swin_unet_checkpoint_wool.pth](https://drive.google.com/file/d/1uaZM1ZLBz2dZWcn85rZmjP7LV6Sg5PZW/view?usp=sharing)          |
+| shear_sheep                | [swin_unet_checkpoint_wool.pth](https://drive.google.com/file/d/1cIbkZlxdZtG4hVVErCCbBxoH8MoRLuZF/view?usp=sharing)          |
 
 </div>
 
