@@ -195,7 +195,7 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
     ```
 -->
 
-## Citation
+## Citation [🔝](#quick-links)
 If you find this repo useful, please cite our paper:
 ```bib
 @inproceedings{li2025open,
