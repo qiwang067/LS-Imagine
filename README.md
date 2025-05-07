@@ -195,7 +195,7 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
     ```
 -->
 
-## Citation [🔝](#quick-links)
+## Citation 
 If you find this repo useful, please cite our paper:
 ```bib
 @inproceedings{li2025open,
@@ -207,7 +207,7 @@ If you find this repo useful, please cite our paper:
 ```
 
 
-## Credits
+## Credits [🔝](#quick-links)
 The codes refer to the implemention of [dreamerv3-torch](https://github.com/NM512/dreamerv3-torch) and [Swin-Unet](https://github.com/HuCaoFighting/Swin-Unet). Thanks for the authors！
 
 
