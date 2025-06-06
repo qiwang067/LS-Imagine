@@ -33,6 +33,7 @@
 </p>
 
 ## Showcases
+<table style="margin: auto;">
 <table class="center">
   <tr>
     <td align="center">Harvest log in plains</td>
@@ -55,11 +56,12 @@
     </td>
   </tr>
 </table>
-
-<p align="center">
 <img src="assets/success_rate_with_barplot.png" alt="evaluation_results" width="90%"/>
+
+<!-- 
+<p align="center">
 </p>
-<!-- # Open-World Reinforcement Learning over Long Short-Term Imagination
+# Open-World Reinforcement Learning over Long Short-Term Imagination
 
 #### Open-World Reinforcement Learning over Long Short-Term Imagination
 
