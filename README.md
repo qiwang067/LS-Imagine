@@ -31,12 +31,35 @@
 <p style="text-align:justify">
   Training visual reinforcement learning agents in a high-dimensional open world presents significant challenges. While various model-based methods have improved sample efficiency by learning interactive world models, these agents tend to be "short-sighted", as they are typically trained on short snippets of imagined experiences. We argue that the primary challenge in open-world decision-making is improving the exploration efficiency across a vast state space, especially for tasks that demand consideration of long-horizon payoffs. In this paper, we present LS-Imgine, which extends the imagination horizon within a limited number of state transition steps, enabling the agent to explore behaviors that potentially lead to promising long-term feedback. The foundation of our approach is to build a <i>long short-term world model</i>. To achieve this, we simulate goal-conditioned jumpy state transitions and compute corresponding affordance maps by zooming in on specific areas within single images. This facilitates the integration of direct long-term values into behavior learning. Our method demonstrates significant improvements over state-of-the-art techniques in MineDojo.
 </p>
+## Showcases
+<table class="center">
+  <tr>
+    <td align="center">Harvest log in plains</td>
+    <td align="center">Harvest water with bucket</td>
+    <td align="center">Shear sheep</td>
+    <td align="center">Mine iron ore</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="assets/iron_demo.gif" width="170">
+    </td>
+    <td>
+      <img src="assets/log_demo.gif" width="170">
+    </td>
+    <td>
+      <img src="assets/water_demo.gif" width="170">
+    </td>
+    <td>
+      <img src="assets/wool_demo.gif" width="170">
+    </td>
+  </tr>
+</table>
 
 <p align="center">
 <img src="assets/success_rate_with_barplot.png" alt="evaluation_results" width="90%"/>
 </p>
-
 <!-- # Open-World Reinforcement Learning over Long Short-Term Imagination
+
 #### Open-World Reinforcement Learning over Long Short-Term Imagination
 
 Jiajian Li*, Qi Wang*, Yunbo Wang, Xin Jin, Yang Li, Wenjun Zeng, Xiaokang Yang
@@ -193,7 +216,7 @@ Additionally, we provide pretrained weights for the tasks mentioned in the paper
         --agent_checkpoint_dir {path_to_latest.pt} \
         --eval_episode_num 100
     ```
--->
+    -->
 
 ## Citation 
 If you find this repo useful, please cite our paper:
@@ -209,5 +232,4 @@ If you find this repo useful, please cite our paper:
 
 ## Credits [🔝](#quick-links)
 The codes refer to the implemention of [dreamerv3-torch](https://github.com/NM512/dreamerv3-torch) and [Swin-Unet](https://github.com/HuCaoFighting/Swin-Unet). Thanks for the authors！
-
 
