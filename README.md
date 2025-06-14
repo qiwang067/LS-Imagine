@@ -1,5 +1,5 @@
 <div align="center">
-<img src='assets/logo_long.png' style="height:100px"></img>
+<img src='assets/logo_long.png' style="height:80px"></img>
 </div>
 <h1 align="center">
  [ICLR 2025 Oral] <i>Open-World Reinforcement Learning over Long Short-Term Imagination</i> </h1>
