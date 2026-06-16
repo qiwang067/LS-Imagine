@@ -30,7 +30,6 @@ def collect_rollouts(config, envs, agent):
     agent_state = None
     reward = [0] * len(envs)
 
-    images = os.listdir(save_dir)
 
     image_num = 0
 
@@ -65,7 +64,7 @@ def collect_rollouts(config, envs, agent):
         done = np.stack(done)
         info = list(info)
 
-        images = os.listdir(save_dir)
+        images = list(pathlib.Path(save_dir).rglob("*.png"))
         image_num = len(images)
 
 
